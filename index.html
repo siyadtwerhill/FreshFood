@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshFood</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin: auto;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        
+
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      nav {
+        background: black;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 3;
+      }
+
+      .order a {
+        background-color: rgb(153, 76, 76);
+        text-decoration: none;
+        float: right;
+        color: aqua;
+        margin: 12px;
+        padding: 15px 35px;
+      }
+      .add a {
+        text-decoration: none;
+        color: sandybrown;
+        margin: 12px;
+        padding: 15px 20px;
+        display: inline-block;
+      }
+      .add a:hover {
+        background: pink;
+        color: rgb(104, 101, 99);
+      }
+      .order a:hover {
+        background: white;
+        color: black;
+      }
+      
+     
+     
+      .mar{
+        text-align: center;
+        margin-top: 25px;
+
+      }
+      hr{
+        border:2px dashed #d14d72;
+      }
+      .col1 a{
+        padding: 5px;
+        background: #d14d72;
+        margin: 22px ;
+        text-decoration: none;
+        color: gainsboro;
+        
+
+      }
+      .col1 a:hover{
+        background: black;
+
+      }
+      .row1::after{
+       content: "";
+       clear: both;
+       display: table;
+
+      }
+      .col{
+        width: 20%;
+        float: left;
+        padding: 10px;
+        position: relative;
+        border-radius: 10px;
+      }
+      .p-img{
+        width: 100%;
+        min-height: 220px;
+        border-radius: 10px;
+      }
+      .p-text{
+        position: absolute;
+        background-color: rgba(128, 34, 34, 0.466);
+        color: antiquewhite;
+        top: -6px;
+        left: 10px;
+        padding: 8px;
+        border-radius: 10px 0 0 0;
+        
+
+      }
+      .heading{
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 8px solid;
+        color: #35374B;
+        border-radius: 30%;
+        
+      }
+      h4{
+        text-align: center;
+        color: gray;
+      }
+      
+      
+      .img{
+        background: url(contect.webp);
+        min-height: 450px;
+        background-size: cover;
+        
+        
+      }
+      .img h4,.re{
+        margin: 0 200px 0 200px;
+        font-size: 25px;
+        line-height: 3;
+      }
+      .img h4{
+        display: inline-block;
+        margin-top: 45px;
+        color: #758ae6 bold;
+      }
+      .img .re{
+        color: rgb(38, 36, 39);
+      }
+
+      .ro::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .ro {
+        width: 100%;
+        background: rgb(21, 19, 43);
+        color: rgb(32, 228, 136);
+      }
+      .ro > .inner1 {
+        width: 30%;
+        float: left;
+        margin: 25px;
+      }
+      .ro > .inner1 >p{
+        line-height: 30px;
+        text-align: justify;
+      }
+      .ro > .inner {
+        width: 23.333;
+        float: left;
+        margin: 25px;
+
+        
+      }
+      ul{
+        list-style: none;
+      
+      }
+      ul > li {
+        line-height: 30px;
+      }
+      .inner > .li{
+        padding: 0 0 0 40px;
+      }
+      
+      ul > li > a{
+        text-decoration: none;
+        color: rgb(32, 228, 136);
+      }
+      h3 .li{
+        font-size: 80px;
+
+      }
+      .contact{
+        color: aquamarine;
+      }
+      .imglogo{
+        width: 5%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        mix-blend-mode: color-burn;
+        padding-left: 30px;
+        float: right;
+      }
+      .h1{
+        text-align: center;
+        font-size: 80px;
+        margin-bottom: 50px;
+      }
+      .contact{
+        background-color: palevioletred;
+        padding: 15px 50px 50px 50px;
+        
+      }
+    
+      
+      .input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 450px;
+      }
+      .name{
+        width: 70%;
+        
+      }
+      .conin{
+        padding: 15px;
+        margin-bottom: 10px;
+        width: 45%;
+        border: none;
+        border-bottom: 5px solid pink;
+        border-radius: 50px;
+        color: aliceblue;
+        background-color: rgb(33, 51, 45);
+      }
+      .bb{
+        margin-top: 15px;
+        width: 15%;
+        margin-bottom: 30px;
+        padding: 15px;
+        color: rgb(105, 202, 202);
+        margin-left: 120px;
+        background-color: rgb(33, 51, 45);
+        border-radius: 25px;
+      }
+      .form{
+        line-height: 60px;
+        text-align: center;
+        margin-top: 0;
+        margin: auto;
+        background: rgb(129, 152, 155)
+      }
+     
+      .fh1{
+        background: rgb(83, 81, 78);
+        margin: 0;
+        
+        color: aliceblue;
+       
+      }
+      .order1{
+        background: rgb(49, 43, 43);
+        margin-left: 270px;
+        color: aqua;
+        padding: 15px;
+        border-radius: 25px
+      }
+      .fh4{
+        color: rgb(46, 52, 54);
+      }
+      .name1{
+        margin-left: 40px;
+        padding: 10px;
+        background: khaki;
+        border: none;
+      }
+      .add1{
+        margin-left: 53px;
+        padding: 10px;
+        background: khaki;
+        border: none;
+      }
+      .phone{
+        margin-left: 53px;
+        padding: 10px;
+        background: khaki;
+        border: none;
+      }
+      .meal{
+        margin-left: 75px;
+        padding: 10px;
+        background: khaki;
+        border: none;
+      }
+      .pay{
+        margin-left: 75px;
+        padding: 10px;
+        background: khaki;
+        border: none;
+        
+      }
+      @media screen and (max-width:750px){
+        .order a {
+        margin: 11px 0;
+        padding: 5px;
+        }
+        .add a{
+          margin: 10px 0 10px 0 ;     
+          padding: 8px;
+        }
+        .col{
+          width: 50%;
+        }
+        .h1{
+          font-size: 30px;
+        }
+        .input{
+          margin-left: 80px;
+        }
+        .conin{
+          width: 100%;
+        }
+        .bb{
+          margin-left: 80px;
+          width: 35%;
+        }
+        .imglogo{
+          width: 17%;
+          float: left;
+          margin-left: 20px;
+        }
+        
+        
+       
+
+      }
+      .container{
+        
+        margin-top: 73px;
+      }
+      .p-text1 {
+        position: absolute;
+        color: #333; /* Added to make text visible */
+        width: 600px;
+        text-align: justify;
+        margin-left: 40px;
+
+      }
+      .p-text1 > .head {
+        font-size: 36px;
+      }
+      .p-text1 > .text-p {
+        font-size: 20px;
+        line-height: 40px;
+      }
+      .image1 {
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .image1 img {
+        width: 100%;
+        height: 500px; /* Set height to 500px */
+        background-size: cover;
+        display: block;
+      }
+      .p-text1>.or{
+        font-size: 20px;
+        text-decoration: none;
+        color: #333;
+        background-color: rgb(106, 109, 82);
+        padding: 10px 18px 10px 18px;
+        display: inline-block;
+        margin-right: 30px;
+        margin-top: 100px;
+        border-radius: 25px;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+        filter: grayscale(50%);
+        
+      }
+      .p-text1 > .or:hover{
+        background: antiquewhite;
+        color: black;
+      }
+      @media (max-width: 700px) {
+        .p-text1 {
+          width: 50%;
+          margin-left: 5%;
+          margin-top: 30px;
+        }
+        .p-text1> .text-p{
+          font-size: 10px;
+          line-height: 20px;
+        }
+        .p-text1> .head{
+          font-size: 13px;
+        }
+        .image1 img {
+          height: 290px;
+        }
+        .container{
+          margin-top: 25px;
+          
+        }
+        .p-text1> .or{
+        font-size: 10px;
+        width: 45px;
+        padding: 5px 10px 5px 10px;
+        margin: 5px;
+       
+      }
+      }
+     
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <div class="order">
+        <a href="#order">Order Now</a>
+      </div>
+      <div class="add">
+        <a href="#Home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#About">About</a>
+        <a href="#contect">Contact</a>
+    </nav>
+    </div>
+   <div id="Home">
+    <div class="row">
+      <div class="container">
+        <div class="p-text1">
+          <h1 class="head">This is not a food it is Experience.</h1>
+          <p class="text-p">
+            Everyone should have healty life. We are bring for you healty food and
+            better life. So enjoy with our food. Listen to the people who
+            love you. Believe that they are worth living for even when you don’t
+            believe it. Seek out the memories depression takes away and project
+            them into the future. Be brave; be strong; take your pills. 
+          </p>
+          <a href="#" class="or">Order</a>
+          <a href="#" class="or">Menu</a>
+        </div>
+        <div class="image1">
+          <img src="contect.webp" alt="" />
+        </div>
+      </div>
+   </div>
+
+    </div>
+    <!-- Menu -->
+    <div id="menu">
+      <h1 class="mar">Menu</h1> <hr>
+    <div class="heading">
+      <header>Indian Food</header>
+    </div>
+    <div class="row1">
+      <div class="col">
+        <img src="OIP (2).jpg" alt="img" class="p-img">
+        <p class="p-text">Indian Food</p>
+        <h4>Chapati = 5000Ks</h4>
+        
+      </div>
+      <div class="col">
+        <img src="download.jpg" alt="img" class="p-img">
+        <p class="p-text">Indian Food</p>
+        <h4>Banne Dosa = 9000Ks</h4>
+        
+      </div>
+      <div class="col">
+        <img src="OIP (2).jpg" alt="img" class="p-img">
+        <p class="p-text">Indian Food</p>
+        <h4>Chapati = 5000Ks</h4>
+      </div>
+      <div class="col">
+        <img src="download.jpg" alt="img" class="p-img">
+        <p class="p-text">Indian Food</p>
+        <h4>Bane Dosa = 9000Ks</h4>
+      </div>
+      <div class="col">
+        <img src="OIP (2).jpg" alt="img" class="p-img">
+        <p class="p-text">Indian Food</p>
+        <h4>Chapati = 5000Ks</h4>
+      </div>
+    </div>
+    <div class="heading">
+      <header>Chinese Food</header>
+    </div>
+
+    <div class="row1">
+      <div class="col">
+        <img src="ch1.webp" alt="img" class="p-img">
+        <p class="p-text">Chinese Food</p>
+        <h4>Dim Sums(1)= 2500Ks</h4>
+      </div>
+      <div class="col">
+        <img src="ch2.webp" alt="img" class="p-img">
+        <p class="p-text">Chinese Food</p>
+        <h4>Kung Po Chicken= 6000Ks</h4>
+      </div>
+      <div class="col">
+        <img src="ch3.jpg" alt="img" class="p-img">
+        <p class="p-text">Chinese Food</p>
+        <h4>Dim Sums(1)= 2500Ks</h4>
+      </div>
+      <div class="col">
+        <img src="ch4.webp" alt="img" class="p-img">
+        <p class="p-text">Chinese Food</p>
+        <h4>Dim Sums(1)= 2500Ks</h4>
+      </div>
+      <div class="col">
+        <img src="ch5.jpeg" alt="img" class="p-img">
+        <p class="p-text">Chinese Food</p>
+        <h4>Chinese Fired Nodle= 5000Ks</h4>
+      </div>
+    </div>
+    <div class="heading">
+      <header>You can have other dishes.</header>
+    </div>
+
+    <div class="row1">
+      <div class="col">
+        <img src="o1.jpg" alt="img" class="p-img">
+        <p class="p-text">Pizza</p>
+        <h4>Pizza = 9000Ks</h4>
+      </div>
+      <div class="col">
+        <img src="o2.jpg" alt="img" class="p-img">
+        <p class="p-text">Bugger</p>
+        <h4>Buger = 2500Ks</h4>
+      </div>
+      <div class="col">
+        <img src="o3.jpg" alt="img" class="p-img">
+        <p class="p-text">Hot Dog</p>
+        <h4>Hot Dog(1)= 3500Ks</h4>
+      </div>
+      <div class="col">
+        <img src="o4.jpg" alt="img" class="p-img">
+        <p class="p-text">Breakfast Taco</p>
+        <h4>Breakfast Taco = 3000ks</h4>
+      </div>
+      <div class="col">
+        <img src="o5.webp" alt="img" class="p-img">
+        <p class="p-text">Pasta</p>
+        <h4>Pasta = 6000Ks</h4>
+      </div>
+    </div>
+    </div>
+    <!-- Menu --> 
+    <!-- Contect -->
+    <div class="contact" id="contect">
+      <h1 class="h1">Contact Me</h1>
+      <div class="input">
+        <div class="name"><input type="text" placeholder="First Name" class="conin"></div>
+        <div class="name"><input type="text" placeholder="End Name"  class="conin"></div>
+        <div class="name"><input type="email" name="" id="" placeholder="abc****@gmail.com"  class="conin"></div>
+        <div class="name"><input type="password" name="" id="" placeholder="password"  class="conin"></div>
+        <input type="button" value="Singin" class="bb">
+       </div>
+       <div class="imglink">
+        <a href="#"><img src="face2.jpg" alt="" class="imglogo"></a>
+        <a href="#"><img src="insta1.jpg" alt="" class="imglogo"></a>
+        <a href="#"><img src="twit1.jpg" alt="" class="imglogo"></a>
+        <a href="#"><img src="what1.jpg" alt="" class="imglogo"></a>
+       </div></div>
+      
+    <!-- COntect us -->
+    <!-- Order -->
+    <div class="form" id="order">
+     
+      <h1 class="fh1">Order Now</h1>
+      <h4 class="fh4">Coustomer name: <input type="text" placeholder="name" class="name1"></h4>
+      <h4 class="fh4">Home Address: <input type="text" placeholder="City/Townshap" class="add1"></h4>
+      <h4 class="fh4">Phone Number: <input type="number" placeholder="09********" class="phone"></h4>
+      <h4 class="fh4">Meal Name: <input type="text" placeholder="Type meals name" class="meal"></h4>
+      <h4 class="fh4">Web/Kpay: <input type="number" placeholder="******" class="pay"></h4>
+      
+      <input type="button" value="Order Now" class="order1">
+    
+     </div>
+ 
+    <!-- Order -->
+
+    <!-- About US -->
+    <div class="ro" id="About">
+      <div class="inner1">
+        <h3>Title Here</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas unde
+          dicta nihil? Repellat, asperiores consectetur quae voluptates
+          voluptatum corporis possimus illo. Pariatur aliquid ipsa aperiam quasi
+          voluptatem neque deserunt voluptate.
+        </p>
+      </div>
+      <div class="inner">
+        <h3 class="li">About</h3>
+        <ul>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Brand Guidelines</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">Prvacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="inner">
+        <h3 class="li">Services</h3>
+        <ul>
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Our Product</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Promo</a></li>
+            <li><a href="#">Payment Method</a></li>
+        </ul>
+      </div>
+      <div class="inner">
+        <h3 class="li">Follow</h3>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Whatsapp</a></li>
+            
+        </ul>
+      </div>
+    </div>
+   
+    <!-- About Us -->
+   
+
+  </body>
+</html>
